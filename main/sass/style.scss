@@ -1,1 +1,82 @@
-@import "../../reset.css"
+@import "../../reset.css";
+
+body {
+	background-color: #f5f5f5;
+}
+
+.wrapper {
+	min-height: 100vh;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+}
+
+.header,
+.footer {
+	text-align: center;
+	background-color: #d8d8d8;
+}
+
+.header {
+	padding: 10px 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	&__logo {
+		font-size: 50px;
+	}
+
+	&__menu {}
+
+	&__list {}
+
+	&__link {}
+}
+
+
+.content {
+	flex: 1 1 auto;
+
+	display: flex;
+	padding: 5px;
+}
+
+.container {
+	display: flex;
+	overflow: scroll;
+}
+
+.board {
+	flex: 1 1 auto;
+	display: flex;
+	background-color: #90b6c7;
+
+
+	&__column {
+		margin: 5px;
+		background-color: #b3d6e6;
+	}
+
+	&__row {
+		padding: 5px;
+	}
+
+	&__item {
+		min-width: 250px;
+		padding: 4px;
+		background-color: #c8e3f0;
+	}
+
+	&__card {}
+}
+
+.card {
+
+	&__title {
+		font-size: 20px;
+		min-height: 30px;
+	}
+
+	&__content {}
+}
