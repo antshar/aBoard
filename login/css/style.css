@@ -1,4 +1,4 @@
-@import "../../reset.css";
+@import "../../common/css/reset.css";
 body {
   text-align: center;
   background: #f5f5f5;
