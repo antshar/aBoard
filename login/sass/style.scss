@@ -1,10 +1,12 @@
 @import "../../common/css/reset.css";
+@import "../../common/font/font.css";
 
 //colors
 $background-light: #f5f5f5;
 $background-dark: #d1d1d1;
 
 body {
+	font-family: 'Circe';
 	text-align: center;
 	background: $background-light;
 }

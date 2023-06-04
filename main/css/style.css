@@ -1,5 +1,7 @@
 @import "../../common/css/reset.css";
+@import "../../common/font/font.css";
 body {
+  font-family: "Circe";
   background-color: #e5eef2;
 }
 
