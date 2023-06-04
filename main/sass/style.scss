@@ -1,7 +1,13 @@
 @import "../../common/css/reset.css";
 
+// colors
+$color-primary: #90b6c7;
+$color-secondary: #b3d6e6;
+
+
+
 body {
-	background-color: #f5f5f5;
+	background-color: lighten($color-primary, 25%);
 }
 
 .wrapper {
@@ -14,7 +20,7 @@ body {
 .header,
 .footer {
 	text-align: center;
-	background-color: #d8d8d8;
+	background-color: lighten($color-primary, 10%);
 }
 
 .header {
@@ -45,12 +51,12 @@ body {
 .board {
 	flex: 1 1 auto;
 	display: flex;
-	background-color: #90b6c7;
+	background-color: $color-primary;
 
 
 	&__column {
 		margin: 5px;
-		background-color: #b3d6e6;
+		background-color: $color-secondary;
 	}
 
 	&__row {
@@ -58,9 +64,7 @@ body {
 	}
 
 	&__item {
-		min-width: 250px;
-		padding: 4px;
-		background-color: #c8e3f0;
+		background-color: lighten($color-secondary, 8%);
 	}
 
 }
