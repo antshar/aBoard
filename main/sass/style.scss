@@ -45,6 +45,7 @@ body {
 
 .container {
 	display: flex;
+	width: 100%;
 	overflow: scroll;
 }
 
@@ -60,14 +61,52 @@ body {
 	}
 
 	&__row {
+		position: relative;
 		padding: 5px;
+
+		&_dragging {
+			opacity: 0.5;
+		}
+
+		&_drag-after::after {
+			content: "";
+			display: block;
+			position: absolute;
+			top: calc(100% - 1px);
+			right: 5px;
+			width: calc(100% - 10px);
+			height: 3px;
+			background-color: darken($color-primary, 30%);
+		}
 	}
 
 	&__item {
+		min-width: 150px;
+		max-width: 300px;
+		padding: 10px;
 		background-color: lighten($color-secondary, 8%);
+		cursor: pointer;
 	}
 
 }
+
+.column {
+
+	&__header {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		padding: 5px;
+		gap: 10px;
+	}
+
+	&__controls {
+		display: flex;
+		justify-content: space-between;
+	}
+
+}
+
 
 .card {
 
