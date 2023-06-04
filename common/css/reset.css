@@ -105,3 +105,20 @@ input {
 	-webkit-appearance: none;
 	border-radius: 0;
 }
+
+a {
+	outline: none;
+	text-decoration: none;
+}
+
+a:link {
+	color: unset;
+}
+
+a:visited {
+	color: unset;
+}
+
+a:active {
+	color: unset;
+}

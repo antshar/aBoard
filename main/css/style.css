@@ -1,5 +1,17 @@
 @import "../../common/css/reset.css";
 @import "../../common/font/font.css";
+a {
+  box-shadow: inset 0 0 0 0 #54b3d6;
+  color: #54b3d6;
+  margin: -1px;
+  padding: 1px;
+  transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+a:hover {
+  box-shadow: inset 100px 0 0 0 #54b3d6;
+  color: white;
+}
+
 body {
   font-family: "Circe";
   background-color: #e5eef2;
