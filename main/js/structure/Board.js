@@ -13,7 +13,14 @@ export class Board {
 	moveCard(cardFrom, cardTo) {
 		const targetColumn = cardTo.column;
 		const cardsAmount = targetColumn.cards.length;
-		const dropIndex = targetColumn.cards.indexOf(cardTo);
+
+		if (cardFrom.column === cardTo.column) {
+			targetColumn.cards.splice(cardFrom.getIndex(), 1);
+		}
+		targetColumn.cards.splice(cardTo.getIndex(), 0, cardFrom);
+
+		const dropIndex = cardTo.getIndex();
+
 		if (dropIndex >= cardsAmount - 1) {
 			targetColumn.element.appendChild(cardFrom.boardRow);
 			return;

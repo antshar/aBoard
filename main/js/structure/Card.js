@@ -31,6 +31,10 @@ export class Card {
 		});
 	}
 
+	getIndex() {
+		return this.column.cards.indexOf(this);
+	}
+
 	getContent() {
 		const title = this.element.querySelector('.card__title').textContent;
 		const content = this.element.querySelector('.card__content').textContent;
