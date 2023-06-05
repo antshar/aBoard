@@ -7,6 +7,7 @@ export class Board {
 		this.columns = Array.from(element.querySelectorAll('.board__column')).map(column => new Column(this, column));
 		this.draggedCard = null;
 		this.targetCard = null;
+		this.editingCard = null;
 	}
 
 	moveCard(cardFrom, cardTo) {
@@ -19,5 +20,28 @@ export class Board {
 		} else {
 			targetColumn.element.insertBefore(cardFrom.boardRow, targetColumn.cards[dropIndex + 1].boardRow);
 		}
+	}
+
+	editCard(card) {
+		this.editingCard = card;
+		const { title, content } = card.getContent();
+		document.querySelector('body').setAttribute("modal-open", "")
+		document.querySelector('.modal').style.display = "flex";
+
+		document.querySelector('.editable__title').value = title;
+		document.querySelector('.editable__content').value = content;
+	}
+
+	saveCard(card) {
+		const title = document.querySelector('.editable__title').value;
+		const content = document.querySelector('.editable__content').value;
+		card.setContent(title, content);
+		this.closeModal();
+	}
+
+	closeModal() {
+		this.editingCard = null;
+		document.querySelector('body').removeAttribute("modal-open");
+		document.querySelector('.modal').style.display = "none";
 	}
 }
