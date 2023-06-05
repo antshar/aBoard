@@ -32,17 +32,23 @@ export class Board {
 	editCard(card) {
 		this.editingCard = card;
 		const { title, content } = card.getContent();
+
+		document.querySelector('.editable__title').value = title || '';
+		document.querySelector('.editable__content').value = content || '';
+
 		document.querySelector('body').setAttribute("modal-open", "")
 		document.querySelector('.modal').style.display = "flex";
-
-		document.querySelector('.editable__title').value = title;
-		document.querySelector('.editable__content').value = content;
 	}
 
 	saveCard(card) {
 		const title = document.querySelector('.editable__title').value;
 		const content = document.querySelector('.editable__content').value;
-		card.setContent(title, content);
+
+		if (card.element === null) {
+			card.column.createCard(title, content);
+		} else {
+			card.setContent(title, content);
+		}
 		this.closeModal();
 	}
 
